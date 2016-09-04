@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Solution</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-grid>
+    <ion-row>
+      <ion-col style="font-weight:bold">Word</ion-col>
+      <ion-col style="font-weight:bold">Start</ion-col>
+      <ion-col style="font-weight:bold">End</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let solution of solutions">
+      <ion-col>{{solution.word}}</ion-col>
+      <ion-col>{{solution.startIndex}}</ion-col>
+      <ion-col>{{solution.endIndex}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <button full (click)="new()">New Puzzle</button>
+</ion-content>

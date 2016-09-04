@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Word Puzzle</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-grid>
+    <ion-row *ngFor="let row of currentPuzzle">
+      <ion-col *ngFor="let col of row">{{col}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <button full (click)="addWord()">Add word</button>
+  <ion-grid>
+    <ion-row *ngFor="let word of words;let $index =index">
+      <ion-col >{{word}}</ion-col>
+      <ion-col >
+        <ion-icon name="close" (click)="removeWord($index)"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    <button full (click)="solve()" ng-if="words.length>0">Solve</button>
+</ion-content>
